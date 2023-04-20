@@ -1,17 +1,9 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Texture;
 
-public class ScreenSettings implements Screen {
-    Magame mg;
-    Texture imgBackGround;
-
-    TextButton btnName, btnClearRec, btnSound, btnMusic, btnBack;
-
-
-    boolean isEnterName;
-    ScreenSettings(Magame magame){
+public class ScreenGame implements Screen {
+    ScreenGame(Magame magame){
 
     }
 

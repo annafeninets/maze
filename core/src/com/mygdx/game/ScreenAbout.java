@@ -18,7 +18,8 @@ public class ScreenAbout implements Screen {
             "использованием LibGdx\n\n" +
             "Цель игры - сбивать\n" +
             "вражеские самолётики\n";
-    ScreenAbout(Magame magame){
+    public ScreenAbout(Magame magame){
+        mg = magame;
         imgBackGround = new Texture("bg/cosmos04.jpg");
         btnBack = new TextButton(mg.fontLarge, "ВЫХОД", 100, 200, true);
     }

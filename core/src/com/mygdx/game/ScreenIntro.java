@@ -11,7 +11,7 @@ public class ScreenIntro implements Screen {
     Texture zas;
     TextButton btnPlay, btnSettings, btnAbout, btnExit;
 
-    ScreenIntro(Magame magame) {
+    public ScreenIntro(Magame magame) {
         mg = magame;
         zas = new Texture("zastavka.jpg");
         btnPlay = new TextButton(mg.fontLarge, "ИГРАТЬ", 100, 1100);
@@ -35,10 +35,10 @@ public class ScreenIntro implements Screen {
                 // mg.setScreen(mg.ScreenGame);
             }
             if (btnSettings.hit(mg.touch.x, mg.touch.y)) {
-                // mg.setScreen(mg.ScreenSettings);
+                 //mg.setScreen(mg.ScreenSettings);
             }
             if (btnAbout.hit(mg.touch.x, mg.touch.y)) {
-                // mg.setScreen(mg.ScreenAbout);
+                //mg.setScreen(mg.ScreenAbout);
             }
             if (btnExit.hit(mg.touch.x, mg.touch.y)) {
                 Gdx.app.exit();

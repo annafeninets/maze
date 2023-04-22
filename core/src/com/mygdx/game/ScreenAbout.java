@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class ScreenAbout implements Screen {
     Magame mg;
-    Texture imgBackGround;
+    Texture imgAbout;
     TextButton btnBack;
     String textAbout =  "Эта игра-стрелялка\n" +
             "создана в IT-школе\n" +
@@ -20,7 +20,7 @@ public class ScreenAbout implements Screen {
             "вражеские самолётики\n";
     public ScreenAbout(Magame magame){
         mg = magame;
-        imgBackGround = new Texture("bg/cosmos04.jpg");
+        imgAbout = new Texture("aboutfon.jpg");
         btnBack = new TextButton(mg.fontLarge, "ВЫХОД", 100, 200, true);
     }
 
@@ -44,7 +44,7 @@ public class ScreenAbout implements Screen {
         mg.camera.update();
         mg.batch.setProjectionMatrix(mg.camera.combined);
         mg.batch.begin();
-        mg.batch.draw(imgBackGround, 0, 0, SCR_WIDTH, SCR_HEIGHT);
+        mg.batch.draw(imgAbout, 0, 0, SCR_WIDTH, SCR_HEIGHT);
         mg.font.draw(mg.batch, textAbout, 30, 1100);
         btnBack.font.draw(mg.batch, btnBack.text, btnBack.x, btnBack.y);
         mg.batch.end();
@@ -72,6 +72,6 @@ public class ScreenAbout implements Screen {
 
     @Override
     public void dispose() {
-        imgBackGround.dispose();
+        imgAbout.dispose();
     }
 }

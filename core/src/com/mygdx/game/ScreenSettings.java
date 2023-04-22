@@ -12,14 +12,14 @@ public class ScreenSettings implements Screen {
     Magame mg;
     Texture imgBackGround;
 
-    TextButton btnName, btnClearRec, btnSound, btnMusic, btnBack;
+    TextButton btnName, btnBack;
     InputKeyboard keyboard;
 
 
     boolean isEnterName;
     public ScreenSettings(Magame magame){
         mg = magame;
-        imgBackGround = new Texture("bg/cosmos02.jpg");
+        imgBackGround = new Texture("settingfon.jpg");
 
         btnName = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 1100, true);
         btnBack = new TextButton(mg.fontLarge, "Назад", 20, 700, true);

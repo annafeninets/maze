@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -7,12 +8,10 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.ScreenUtils;
 
-import java.util.Vector;
 
-public class Magame extends com.badlogic.gdx.Game {
-	public static final float SCR_WIDTH=720, SCR_HEIGHT=1280;
+public class Magame extends Game {
+	public static final float SCR_WIDTH=1280, SCR_HEIGHT=720;
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	Vector3 touch;

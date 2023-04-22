@@ -14,10 +14,10 @@ public class ScreenIntro implements Screen {
     public ScreenIntro(Magame magame) {
         mg = magame;
         zas = new Texture("zastavka.jpg");
-        btnPlay = new TextButton(mg.fontLarge, "ИГРАТЬ", 100, 1100);
-        btnSettings = new TextButton(mg.fontLarge, "НАСТРОЙКИ", 100, 1000);
-        btnAbout = new TextButton(mg.fontLarge, "ОБ ИГРЕ", 100, 900);
-        btnExit = new TextButton(mg.fontLarge, "ВЫХОД", 100, 800);
+        btnPlay = new TextButton(mg.fontLarge, "ИГРАТЬ", 100,500 );
+        btnSettings = new TextButton(mg.fontLarge, "НАСТРОЙКИ", 100, 400);
+        btnAbout = new TextButton(mg.fontLarge, "ОБ ИГРЕ", 100, 300);
+        btnExit = new TextButton(mg.fontLarge, "ВЫХОД", 100, 200);
     }
 
     @Override

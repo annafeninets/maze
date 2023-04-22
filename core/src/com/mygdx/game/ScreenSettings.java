@@ -21,10 +21,7 @@ public class ScreenSettings implements Screen {
         mg = magame;
         imgBackGround = new Texture("bg/cosmos02.jpg");
 
-        btnName = new TextButton(mg.fontLarge, "Имя: "+mg.playerName, 20, 1100, true);
-        btnClearRec = new TextButton(mg.fontLarge, "Очистка рекордов", 20, 1000, true);
-        btnSound = new TextButton(mg.fontLarge, "Звук вкл", 20, 900, true);
-        btnMusic = new TextButton(mg.fontLarge, "Музыка вкл", 20, 800, true);
+        btnName = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 1100, true);
         btnBack = new TextButton(mg.fontLarge, "Назад", 20, 700, true);
 
         keyboard = new InputKeyboard(SCR_WIDTH, SCR_HEIGHT/1.7f, 8);
@@ -43,8 +40,8 @@ public class ScreenSettings implements Screen {
             mg.camera.unproject(mg.touch);
             if(isEnterName){
                 if(keyboard.endOfEdit(mg.touch.x, mg.touch.y)){
-                    mg.playerName = keyboard.getText();
-                    btnName.setText("Имя: "+mg.playerName);
+                    mg.playerName1 = keyboard.getText();
+                    btnName.setText("Имя: "+mg.playerName1);
                     isEnterName = false;
                 }
             } else {
@@ -95,18 +92,18 @@ public class ScreenSettings implements Screen {
     }
     void saveSettings() {
         Preferences pref = Gdx.app.getPreferences("settings");
-        pref.putString("namePlayer", mg.playerName);
+        pref.putString("namePlayer", mg.playerName1);
         pref.flush();
     }
 
     void loadSettings() {
         Preferences pref = Gdx.app.getPreferences("settings");
-        if(pref.contains("namePlayer")) mg.playerName = pref.getString("namePlayer");
+        if(pref.contains("namePlayer")) mg.playerName1 = pref.getString("namePlayer");
         buttonsUpdate();
     }
 
     void buttonsUpdate() {
-        btnName.setText("Имя: "+mg.playerName);
+        btnName.setText("Имя: "+mg.playerName1);
     }
 }
 

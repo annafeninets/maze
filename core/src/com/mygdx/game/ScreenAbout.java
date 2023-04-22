@@ -11,13 +11,11 @@ public class ScreenAbout implements Screen {
     Magame mg;
     Texture imgAbout;
     TextButton btnBack;
-    String textAbout =  "Эта игра-стрелялка\n" +
-            "создана в IT-школе\n" +
-            "Samsung на Java\n" +
-            "под Android c\n" +
-            "использованием LibGdx\n\n" +
-            "Цель игры - сбивать\n" +
-            "вражеские самолётики\n";
+    String textAbout =  "В этой игре вы\n" +
+            "должны первее своего\n" +
+            "соперника найти в лабиринте\n" +
+            "сундук с скоровищем\n" +
+            "и принести его на выход\n\n";
     public ScreenAbout(Magame magame){
         mg = magame;
         imgAbout = new Texture("aboutfon.jpg");

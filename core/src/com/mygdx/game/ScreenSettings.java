@@ -22,6 +22,7 @@ public class ScreenSettings implements Screen {
         imgBackGround = new Texture("settingfon.jpg");
 
         btnName1 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 1100, true);
+        btnName2 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName2, 20, 900, true);
         btnBack = new TextButton(mg.fontLarge, "Назад", 20, 700, true);
 
         keyboard = new InputKeyboard(SCR_WIDTH, SCR_HEIGHT/1.7f, 8);
@@ -48,11 +49,21 @@ public class ScreenSettings implements Screen {
                 if (btnName1.hit(mg.touch.x, mg.touch.y)) {
                     isEnterName = true;
                 }
+                if(keyboard.endOfEdit(mg.touch.x, mg.touch.y)){
+                        mg.playerName2 = keyboard.getText();
+                        btnName2.setText("Имя: "+mg.playerName2);
+                        isEnterName = false;
+                    }
+                }
+            } else {
+                if (btnName2.hit(mg.touch.x, mg.touch.y)) {
+                    isEnterName = true;
+                }
 
                 if (btnBack.hit(mg.touch.x, mg.touch.y)) {
                     mg.setScreen(mg.screenIntro);
                 }
-            }
+
         }
 
         mg.camera.update();

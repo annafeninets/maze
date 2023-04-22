@@ -32,13 +32,13 @@ public class ScreenIntro implements Screen {
             mg.touch.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             mg.camera.unproject(mg.touch);
             if (btnPlay.hit(mg.touch.x, mg.touch.y)) {
-                // mg.setScreen(mg.ScreenGame);
+                mg.setScreen(mg.screenGame);
             }
             if (btnSettings.hit(mg.touch.x, mg.touch.y)) {
-                 //mg.setScreen(mg.ScreenSettings);
+                 mg.setScreen(mg.screenSettings);
             }
             if (btnAbout.hit(mg.touch.x, mg.touch.y)) {
-                //mg.setScreen(mg.ScreenAbout);
+                mg.setScreen(mg.screenAbout);
             }
             if (btnExit.hit(mg.touch.x, mg.touch.y)) {
                 Gdx.app.exit();

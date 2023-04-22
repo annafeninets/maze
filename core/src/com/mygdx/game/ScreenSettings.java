@@ -12,7 +12,7 @@ public class ScreenSettings implements Screen {
     Magame mg;
     Texture imgBackGround;
 
-    TextButton btnName, btnBack;
+    TextButton btnName1, btnName2, btnBack;
     InputKeyboard keyboard;
 
 
@@ -21,7 +21,7 @@ public class ScreenSettings implements Screen {
         mg = magame;
         imgBackGround = new Texture("settingfon.jpg");
 
-        btnName = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 1100, true);
+        btnName1 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 1100, true);
         btnBack = new TextButton(mg.fontLarge, "Назад", 20, 700, true);
 
         keyboard = new InputKeyboard(SCR_WIDTH, SCR_HEIGHT/1.7f, 8);
@@ -41,11 +41,11 @@ public class ScreenSettings implements Screen {
             if(isEnterName){
                 if(keyboard.endOfEdit(mg.touch.x, mg.touch.y)){
                     mg.playerName1 = keyboard.getText();
-                    btnName.setText("Имя: "+mg.playerName1);
+                    btnName1.setText("Имя: "+mg.playerName1);
                     isEnterName = false;
                 }
             } else {
-                if (btnName.hit(mg.touch.x, mg.touch.y)) {
+                if (btnName1.hit(mg.touch.x, mg.touch.y)) {
                     isEnterName = true;
                 }
 
@@ -59,7 +59,7 @@ public class ScreenSettings implements Screen {
         mg.batch.setProjectionMatrix(mg.camera.combined);
         mg.batch.begin();
         mg.batch.draw(imgBackGround, 0, 0, SCR_WIDTH, SCR_HEIGHT);
-        btnName.font.draw(mg.batch, btnName.text, btnName.x, btnName.y);
+        btnName1.font.draw(mg.batch, btnName1.text, btnName1.x, btnName1.y);
         btnBack.font.draw(mg.batch, btnBack.text, btnBack.x, btnBack.y);
         if(isEnterName) keyboard.draw(mg.batch);
         mg.batch.end();
@@ -103,7 +103,7 @@ public class ScreenSettings implements Screen {
     }
 
     void buttonsUpdate() {
-        btnName.setText("Имя: "+mg.playerName1);
+        btnName1.setText("Имя: "+mg.playerName1);
     }
 }
 

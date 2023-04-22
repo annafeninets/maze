@@ -23,6 +23,7 @@ public class Magame extends com.badlogic.gdx.Game {
 	ScreenSettings screenSettings;
 	ScreenAbout screenAbout;
 	String playerName1 = "Noname";
+	String playerName2 = "Noname";
 
 	
 	@Override

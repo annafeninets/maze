@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class ScreenSettings implements Screen {
     Magame mg;
-    Texture imgBackGround;
+    Texture imgSettings;
 
     TextButton btnName1, btnName2, btnBack;
     InputKeyboard keyboard;
@@ -20,7 +20,7 @@ public class ScreenSettings implements Screen {
     boolean isEnterName2;
     public ScreenSettings(Magame magame){
         mg = magame;
-        imgBackGround = new Texture("settingfon.jpg");
+        imgSettings = new Texture("settingfon.jpg");
 
         btnName1 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 500, true);
         btnName2 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName2, 20, 400, true);
@@ -56,7 +56,7 @@ public class ScreenSettings implements Screen {
         mg.camera.update();
         mg.batch.setProjectionMatrix(mg.camera.combined);
         mg.batch.begin();
-        mg.batch.draw(imgBackGround, 0, 0, SCR_WIDTH, SCR_HEIGHT);
+        mg.batch.draw(imgSettings, 0, 0, SCR_WIDTH, SCR_HEIGHT);
         btnName1.font.draw(mg.batch, btnName1.text, btnName1.x, btnName1.y);
         btnName2.font.draw(mg.batch, btnName2.text, btnName2.x, btnName2.y);
         btnBack.font.draw(mg.batch, btnBack.text, btnBack.x, btnBack.y);
@@ -81,12 +81,12 @@ public class ScreenSettings implements Screen {
 
     @Override
     public void hide() {
-
+        saveSettings();
     }
 
     @Override
     public void dispose() {
-        imgBackGround.dispose();
+        imgSettings.dispose();
         keyboard.dispose();
     }
     void saveSettings() {

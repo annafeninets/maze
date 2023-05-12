@@ -11,15 +11,15 @@ public class ScreenAbout implements Screen {
     Magame mg;
     Texture imgAbout;
     TextButton btnBack;
-    String textAbout =  "В этой игре вы\n" +
-            "должны первее своего\n" +
-            "соперника найти в лабиринте\n" +
-            "сундук с скоровищем\n" +
-            "и принести его на выход\n\n";
+    String textAbout = "In this game you\n" +
+            "have to find a way out \n" +
+            "of the maze faster \n" +
+            "of your opponent.\n\n";
+
     public ScreenAbout(Magame magame){
         mg = magame;
         imgAbout = new Texture("aboutfon.jpg");
-        btnBack = new TextButton(mg.fontLarge, "ВЫХОД", 100, 200, true);
+        btnBack = new TextButton(mg.fontLarge, "EXIT", 100, 200, true);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ScreenAbout implements Screen {
         mg.batch.setProjectionMatrix(mg.camera.combined);
         mg.batch.begin();
         mg.batch.draw(imgAbout, 0, 0, SCR_WIDTH, SCR_HEIGHT);
-        mg.font.draw(mg.batch, textAbout, 30, 1100);
+        mg.font.draw(mg.batch, textAbout, 30, 700);
         btnBack.font.draw(mg.batch, btnBack.text, btnBack.x, btnBack.y);
         mg.batch.end();
     }

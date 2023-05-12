@@ -1,31 +1,23 @@
 package com.mygdx.game;
-
 import static com.mygdx.game.Magame.SCR_HEIGHT;
 import static com.mygdx.game.Magame.SCR_WIDTH;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-
 public class ScreenSettings implements Screen {
     Magame mg;
     Texture imgSettings;
-
     TextButton btnName1, btnName2, btnBack;
     InputKeyboard keyboard;
-
-
     boolean isEnterName1;
     boolean isEnterName2;
     public ScreenSettings(Magame magame){
         mg = magame;
         imgSettings = new Texture("settingfon.jpg");
-
-        btnName1 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName1, 20, 500, true);
-        btnName2 = new TextButton(mg.fontLarge, "Имя: "+mg.playerName2, 20, 400, true);
-        btnBack = new TextButton(mg.fontLarge, "Назад", 20, 300, true);
-
+        btnName1 = new TextButton(mg.fontLarge, "Player №1: "+ mg.playerName1, 20, 500, true);
+        btnName2 = new TextButton(mg.fontLarge, "Player №2: "+ mg.playerName2, 20, 400, true);
+        btnBack = new TextButton(mg.fontLarge, "BACK", 20, 300, true);
         keyboard = new InputKeyboard(SCR_WIDTH, SCR_HEIGHT/1.7f, 10);
         loadSettings();
     }
@@ -37,21 +29,35 @@ public class ScreenSettings implements Screen {
 
     @Override
     public void render(float delta) {
-        if(Gdx.input.justTouched()){
+        if(Gdx.input.justTouched()) {
             mg.touch.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             mg.camera.unproject(mg.touch);
-            if(isEnterName1){
-                if(keyboard.endOfEdit(mg.touch.x, mg.touch.y)){
+            if (isEnterName1) {
+                if (keyboard.endOfEdit(mg.touch.x, mg.touch.y)) {
                     mg.playerName1 = keyboard.getText();
-                    btnName1.setText("Имя: "+mg.playerName1);
+                    btnName1.setText("Name of the 1st player: " + mg.playerName1);
                     isEnterName1 = false;
                 }
             } else {
                 if (btnName1.hit(mg.touch.x, mg.touch.y)) {
                     isEnterName1 = true;
                 }
+            }
+            if (isEnterName2) {
+                if (keyboard.endOfEdit(mg.touch.x, mg.touch.y)) {
+                    mg.playerName2 = keyboard.getText();
+                    btnName2.setText("Name of the 2nd player: " + mg.playerName2);
+                    isEnterName2 = false;
+                }
+            } else {
+                if (btnName2.hit(mg.touch.x, mg.touch.y)) {
+                    isEnterName2 = true;
                 }
             }
+            if (btnBack.hit(mg.touch.x, mg.touch.y)) {
+                mg.setScreen(mg.screenIntro);
+            }
+        }
 
         mg.camera.update();
         mg.batch.setProjectionMatrix(mg.camera.combined);
@@ -61,6 +67,7 @@ public class ScreenSettings implements Screen {
         btnName2.font.draw(mg.batch, btnName2.text, btnName2.x, btnName2.y);
         btnBack.font.draw(mg.batch, btnBack.text, btnBack.x, btnBack.y);
         if(isEnterName1) keyboard.draw(mg.batch);
+        if(isEnterName2) keyboard.draw(mg.batch);
         mg.batch.end();
     }
 
@@ -104,8 +111,7 @@ public class ScreenSettings implements Screen {
     }
 
     void buttonsUpdate() {
-        btnName1.setText("Имя: "+mg.playerName1);
-        btnName2.setText("Имя: "+mg.playerName2);
+        btnName1.setText("Name of the 1st player: "+ mg.playerName1);
+        btnName2.setText("Name of the 2nd player: "+ mg.playerName2);
     }
 }
-

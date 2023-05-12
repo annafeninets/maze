@@ -1,5 +1,4 @@
 package com.mygdx.game;
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -8,23 +7,18 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Vector3;
-
-
 public class Magame extends Game {
 	public static final float SCR_WIDTH=1280, SCR_HEIGHT=720;
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	Vector3 touch;
 	BitmapFont font, fontLarge;
-
 	ScreenIntro screenIntro;
 	ScreenGame screenGame;
 	ScreenSettings screenSettings;
 	ScreenAbout screenAbout;
 	String playerName1 = "Noname";
 	String playerName2 = "Noname";
-
-	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -37,17 +31,16 @@ public class Magame extends Game {
 		screenSettings = new ScreenSettings(this);
 		screenAbout = new ScreenAbout(this);
 		setScreen(screenIntro);
-
 	}
 
 
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
 	}
 	void generateFont(){
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("Blakalnk-Regular.ttf"));
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("BlakaInk-Regular.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		parameter.size = 60;
 		parameter.color = new Color().set(1, 0.9f, 0.4f, 1);
@@ -55,7 +48,7 @@ public class Magame extends Game {
 		parameter.borderWidth = 2;
 		parameter.characters = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;:,{}\"´`'<>";
 		font = generator.generateFont(parameter);
-		parameter.color = new Color().set(1, 0.9f, 0.4f, 1);
+		parameter.color = new Color().set(1, 1, 1, 1);
 		parameter.size = 80;
 		fontLarge = generator.generateFont(parameter);
 		generator.dispose();

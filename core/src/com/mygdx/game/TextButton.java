@@ -1,18 +1,13 @@
 package com.mygdx.game;
-
 import static com.mygdx.game.Magame.SCR_WIDTH;
-
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-
-
 public class TextButton {
     float x, y;
     float width, height;
     String text;
     BitmapFont font;
     boolean isScrCenter;
-
     public TextButton(BitmapFont font, String text, float x, float y, boolean isScrCenter) {
         this.x = x;
         this.y = y;
@@ -27,8 +22,7 @@ public class TextButton {
 
     public void setText(String text) {
         this.text = text;
-        textToCenter();
-    }
+        textToCenter();    }
 
     public TextButton(BitmapFont font, String text, float x, float y) {
         this.x = x;

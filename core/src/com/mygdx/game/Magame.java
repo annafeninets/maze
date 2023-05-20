@@ -6,9 +6,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector3;
 public class Magame extends Game {
 	public static final float SCR_WIDTH=1280, SCR_HEIGHT=720;
+
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	Vector3 touch;

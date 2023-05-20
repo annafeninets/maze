@@ -1,10 +1,17 @@
 package com.mygdx.game;
 
+import java.awt.Paint;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
+import java.util.Stack;
 
-public class Maze {
+import javax.naming.Context;
+
+public class Maze{
     public int[][] generateMaze(int width, int height) {
         int[][] maze = new int[width][height];
 
